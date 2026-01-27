@@ -2,7 +2,7 @@
 
 A modern, high-performance dashboard for managing user data, built with Next.js 15 and Tailwind CSS. This project features a premium UI design with glassmorphism effects, smooth animations, and a robust feature set for data visualization and management.
 
-![Project Preview](/app/icon.svg)
+
 
 ## 🚀 Features
 
