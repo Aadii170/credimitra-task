@@ -1,36 +1,77 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# CreditMitra Users Dashboard
 
-## Getting Started
+A modern, high-performance dashboard for managing user data, built with Next.js 15 and Tailwind CSS. This project features a premium UI design with glassmorphism effects, smooth animations, and a robust feature set for data visualization and management.
 
-First, run the development server:
+![Project Preview](/app/icon.svg)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## 🚀 Features
+
+-   **Modern UI/UX**: Built with a "premium" aesthetic using custom gradients, glassmorphism, and responsive layouts.
+-   **Dashboard Analytics**: Real-time visual breakdown of user status (Active vs Inactive) with animated progress bars and charts.
+-   **Data Management**:
+    -   **Paginated Table & Card Views**: Toggle between a detailed table view and a visual grid card view.
+    -   **Advanced Filtering**: Filter users by status (All, Active, Inactive).
+    -   **Sorting**: Sort users by name (A-Z, Z-A).
+    -   **Search**: Real-time search by name or email.
+-   **User Details Drawer**: A smooth, animated side drawer displaying comprehensive user profiles.
+-   **Responsive Design**: Fully optimized for mobile, tablet, and desktop screens.
+-   **Dark Mode Ready**: Architecture supports theme switching (configured via `next-themes`).
+
+## 🛠️ Tech Stack
+
+-   **Framework**: [Next.js 15](https://nextjs.org/) (App Directory)
+-   **Styling**: [Tailwind CSS](https://tailwindcss.com/)
+-   **Animations**: [Framer Motion](https://www.framer.com/motion/)
+-   **Icons**: [Lucide React](https://lucide.dev/)
+-   **Charts**: [Recharts](https://recharts.org/)
+-   **Language**: TypeScript
+
+## 📂 Project Structure
+
+```
+creditmitra/
+├── app/                  # Next.js App Router pages and layouts
+│   ├── globals.css       # Global styles and Tailwind theme configuration
+│   ├── layout.tsx        # Root layout with providers
+│   └── page.tsx          # Main Dashboard page
+├── components/           # Reusable UI components
+│   ├── dashboard/        # Dashboard-specific components (Analytics, UserList, etc.)
+│   ├── layout/           # Shared layout components (Header, Footer)
+│   └── ui/               # Base UI elements (Button, Input, Pagination)
+├── lib/                  # Utilities and Hooks
+│   ├── hooks/            # Custom React hooks (useUsers.ts)
+│   └── utils.ts          # Helper functions (cn, etc.)
+├── public/               # Static assets
+└── types/                # TypeScript type definitions
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## ⚡ Getting Started
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+1.  **Clone the repository**:
+    ```bash
+    git clone <repository-url>
+    cd creditmitra
+    ```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+2.  **Install dependencies**:
+    ```bash
+    npm install
+    # or
+    yarn install
+    # or
+    pnpm install
+    ```
 
-## Learn More
+3.  **Run the development server**:
+    ```bash
+    npm run dev
+    ```
 
-To learn more about Next.js, take a look at the following resources:
+4.  Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 📝 Recent Updates
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+-   **Codebase Cleanup**: Removed boilerplate code, unused assets, and legacy comments for a cleaner production build.
+-   **UI Polish**: Enhanced "Controls" with custom select components and improved responsiveness.
+-   **Performance**: Optimized rendering with `useMemo` and `useCallback` in data hooks.
+-   **Configuration**: Added production-ready `.gitignore`.
