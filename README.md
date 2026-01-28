@@ -2,11 +2,9 @@
 
 **Live Demo:** [https://user-dashboard-tan-alpha.vercel.app/](https://user-dashboard-tan-alpha.vercel.app/)
 
-<<<<<<< HEAD
 ## 🏃‍♂️ How to Run Locally
-=======
 
->>>>>>> f180a4b211e2035e96cebeae5e8c0b165331215b
+
 
 1.  **Clone & Install**
     ```bash
