@@ -38,7 +38,7 @@ export function Controls({
                     <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-stone-400 group-focus-within:text-primary transition-colors" />
                     <Input
                         placeholder="Search by name or email..."
-                        className="pl-10 bg-white rounded-full border-transparent shadow-sm hover:shadow-md focus:bg-white focus:ring-1 focus:ring-primary/20 transition-all h-11"
+                        className="pl-10 bg-white rounded-full border-transparent shadow-sm hover:shadow-md focus:bg-white focus:ring-1 focus:ring-primary/20 transition-all h-11 text-stone-900 placeholder:text-stone-400"
                         value={searchQuery}
                         onChange={(e) => setSearchQuery(e.target.value)}
                     />
@@ -98,7 +98,7 @@ export function Controls({
                     {/* Sort Select */}
                     <div className="relative group">
                         <select
-                            className="h-11 w-[140px] appearance-none rounded-full border-transparent bg-white pl-4 pr-9 py-2 text-xs font-medium shadow-sm hover:shadow-md transition-all focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-stone-300 cursor-pointer"
+                            className="h-11 w-[140px] appearance-none rounded-full border-transparent bg-white pl-4 pr-9 py-2 text-xs font-medium shadow-sm hover:shadow-md transition-all focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-stone-300 cursor-pointer text-stone-900"
                             value={sortBy}
                             onChange={(e) => setSortBy(e.target.value as 'name_asc' | 'name_desc')}
                         >
@@ -111,7 +111,7 @@ export function Controls({
                     {/* Items Per Page */}
                     <div className="relative">
                         <select
-                            className="h-11 appearance-none rounded-full border-transparent bg-white pl-4 pr-9 py-2 text-xs font-medium shadow-sm hover:shadow-md transition-all focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-stone-300 cursor-pointer"
+                            className="h-11 appearance-none rounded-full border-transparent bg-white pl-4 pr-9 py-2 text-xs font-medium shadow-sm hover:shadow-md transition-all focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-stone-300 cursor-pointer text-stone-900"
                             value={itemsPerPage}
                             onChange={(e) => setItemsPerPage(Number(e.target.value))}
                         >
@@ -119,7 +119,7 @@ export function Controls({
                             <option value={10}>10 row</option>
                             <option value={20}>20 row</option>
                         </select>
-                        <ChevronDown className="absolute right-2 top-1/2 -translate-y-1/2 h-3 w-3 opacity-50 pointer-events-none" />
+                        <ChevronDown className="absolute right-2 top-1/2 -translate-y-1/2 h-3 w-3 opacity-50 pointer-events-none text-muted-foreground" />
                     </div>
                 </div>
             </div>

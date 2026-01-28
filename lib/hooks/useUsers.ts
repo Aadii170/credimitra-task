@@ -48,11 +48,9 @@ export function useUsers(): UseUsersReturn {
         setIsLoading(true);
         setError(null);
         try {
-            const delay = new Promise((resolve) => setTimeout(resolve, 1500));
-            const [response] = await Promise.all([
-                fetch('/users.json'),
-                delay
-            ]);
+            // Simulate network latency as requested
+            await new Promise(r => setTimeout(r, 300));
+            const response = await fetch('/users.json');
 
             if (!response.ok) {
                 throw new Error('Failed to fetch data');

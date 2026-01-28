@@ -1,77 +1,35 @@
 # CreditMitra Users Dashboard
 
-A modern, high-performance dashboard for managing user data, built with Next.js 15 and Tailwind CSS. This project features a premium UI design with glassmorphism effects, smooth animations, and a robust feature set for data visualization and management.
+**Live Demo:** [https://user-dashboard-tan-alpha.vercel.app/](https://user-dashboard-tan-alpha.vercel.app/)
 
-![Project Preview](/app/icon.svg)
+## 🏃‍♂️ How to Run Locally
 
-## 🚀 Features
-
--   **Modern UI/UX**: Built with a "premium" aesthetic using custom gradients, glassmorphism, and responsive layouts.
--   **Dashboard Analytics**: Real-time visual breakdown of user status (Active vs Inactive) with animated progress bars and charts.
--   **Data Management**:
-    -   **Paginated Table & Card Views**: Toggle between a detailed table view and a visual grid card view.
-    -   **Advanced Filtering**: Filter users by status (All, Active, Inactive).
-    -   **Sorting**: Sort users by name (A-Z, Z-A).
-    -   **Search**: Real-time search by name or email.
--   **User Details Drawer**: A smooth, animated side drawer displaying comprehensive user profiles.
--   **Responsive Design**: Fully optimized for mobile, tablet, and desktop screens.
--   **Dark Mode Ready**: Architecture supports theme switching (configured via `next-themes`).
-
-## 🛠️ Tech Stack
-
--   **Framework**: [Next.js 15](https://nextjs.org/) (App Directory)
--   **Styling**: [Tailwind CSS](https://tailwindcss.com/)
--   **Animations**: [Framer Motion](https://www.framer.com/motion/)
--   **Icons**: [Lucide React](https://lucide.dev/)
--   **Charts**: [Recharts](https://recharts.org/)
--   **Language**: TypeScript
-
-## 📂 Project Structure
-
-```
-creditmitra/
-├── app/                  # Next.js App Router pages and layouts
-│   ├── globals.css       # Global styles and Tailwind theme configuration
-│   ├── layout.tsx        # Root layout with providers
-│   └── page.tsx          # Main Dashboard page
-├── components/           # Reusable UI components
-│   ├── dashboard/        # Dashboard-specific components (Analytics, UserList, etc.)
-│   ├── layout/           # Shared layout components (Header, Footer)
-│   └── ui/               # Base UI elements (Button, Input, Pagination)
-├── lib/                  # Utilities and Hooks
-│   ├── hooks/            # Custom React hooks (useUsers.ts)
-│   └── utils.ts          # Helper functions (cn, etc.)
-├── public/               # Static assets
-└── types/                # TypeScript type definitions
-```
-
-## ⚡ Getting Started
-
-1.  **Clone the repository**:
+1.  **Clone & Install**
     ```bash
-    git clone <repository-url>
-    cd creditmitra
-    ```
-
-2.  **Install dependencies**:
-    ```bash
+    git clone https://github.com/Aadii170/credimitra-task.git
+    cd credimitra-task
     npm install
-    # or
-    yarn install
-    # or
-    pnpm install
     ```
-
-3.  **Run the development server**:
+2.  **Start Dev Server**
     ```bash
     npm run dev
     ```
+    Open [http://localhost:3000](http://localhost:3000) to view the app.
 
-4.  Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🔄 Data & Async Simulation
 
-## 📝 Recent Updates
+-   **Source:** The user data is located in `public/users.json`.
+-   **Simulation:** We simulate a realistic API call in `lib/hooks/useUsers.ts`. It fetches the static JSON file but uses `await new Promise(r => setTimeout(r, 300))` to introduce a **300ms network latency**. This ensures the UI handles "loading" states gracefully without feeling sluggish.
 
--   **Codebase Cleanup**: Removed boilerplate code, unused assets, and legacy comments for a cleaner production build.
--   **UI Polish**: Enhanced "Controls" with custom select components and improved responsiveness.
--   **Performance**: Optimized rendering with `useMemo` and `useCallback` in data hooks.
--   **Configuration**: Added production-ready `.gitignore`.
+## 🎨 Key Design & Implementation Decisions
+
+-   **Drawer vs. Modal:** I chose a **Side Drawer** for user details instead of a modal. This maintains context (you can still see the list) while providing more vertical space for detailed profile information, which feels more "premium" and less disruptive.
+-   **Framer Motion over CSS:** Framer Motion is used for complex state transitions (like the drawer entering, list items staggering in). It offers superior control over physics-based animations (springs) that pure CSS transitions cannot easily replicate, making the app feel alive.
+-   **Micro-interactions:** Interactive elements (buttons, cards) have subtle hover scales (`scale-[1.02]`) and focus rings. These provide immediate feedback, improving accessibility and making the interface feel responsive and tangible.
+-   **Theme Persistence:** The theme preference is persisted in `localStorage` under the key `theme` (via `next-themes`), ensuring a consistent experience across sessions.
+
+## 🚀 Improvements (With More Time)
+
+-   **Virtualization:** For lists with thousands of users, I would implement `react-window` to render only visible rows, significantly improving performance.
+-   **Server-Side Pagination:** Currently, pagination is client-side. Moving this to the "backend" (or an API route) would be better for massive datasets.
+-   **Unit Tests:** Adding Jest/React Testing Library tests for critical components (like `UserList` and utility hooks) to ensure stability.
