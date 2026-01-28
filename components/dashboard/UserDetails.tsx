@@ -116,18 +116,18 @@ export function UserDetails({ user, onClose }: UserDetailsProps) {
                                     animate={{ opacity: 1, scale: 1 }}
                                     exit={{ opacity: 0, scale: 0.95 }}
                                     transition={{ duration: 0.3 }}
-                                    className="relative flex flex-col items-center bg-gradient-to-br from-[#f8edc0] via-[#f1ecd8] to-[#e4e5e7] p-6 rounded-3xl shadow-xl border border-white/20"
+                                    className="relative flex flex-col items-center bg-white p-6 rounded-3xl shadow-xl border border-stone-200"
                                 >
                                     <Button
                                         variant="ghost"
                                         size="icon"
                                         onClick={onClose}
-                                        className="absolute right-4 top-4 hover:bg-white/40 text-stone-500"
+                                        className="absolute right-4 top-4 hover:bg-stone-100 text-stone-500"
                                     >
                                         <X className="h-4 w-4" />
                                     </Button>
 
-                                    <div className="relative flex h-24 w-24 items-center justify-center rounded-full bg-white/40 text-stone-900 overflow-hidden text-2xl font-bold mb-4 ring-4 ring-white/50 shadow-lg mt-2">
+                                    <div className="relative flex h-24 w-24 items-center justify-center rounded-full bg-stone-100 text-stone-900 overflow-hidden text-2xl font-bold mb-4 ring-4 ring-stone-50 shadow-lg mt-2">
                                         {user.avatar ? (
                                             <img src={user.avatar} alt={user.name} className="h-full w-full object-cover" />
                                         ) : (
@@ -153,25 +153,25 @@ export function UserDetails({ user, onClose }: UserDetailsProps) {
                                     animate={{ opacity: 1, scale: 1 }}
                                     exit={{ opacity: 0, scale: 0.95 }}
                                     transition={{ duration: 0.3, delay: 0.1 }}
-                                    className="flex flex-col gap-6 bg-gradient-to-br from-[#f8edc0] via-[#f1ecd8] to-[#e4e5e7] p-6 rounded-3xl shadow-xl border border-white/20"
+                                    className="flex flex-col gap-6 bg-white p-6 rounded-3xl shadow-xl border border-stone-200"
                                 >
                                     <div className="space-y-2">
                                         <h4 className="text-sm font-medium text-stone-500 uppercase tracking-wider pl-1">About</h4>
-                                        <p className="text-sm leading-relaxed text-stone-800 bg-white/50 p-4 rounded-2xl shadow-sm border border-white/20">
+                                        <p className="text-sm leading-relaxed text-stone-900 bg-[#fbd965] p-4 rounded-2xl shadow-sm">
                                             {user.bio || "No bio available."}
                                         </p>
                                     </div>
 
                                     <div className="grid grid-cols-2 gap-4">
-                                        <div className="space-y-1 p-3 rounded-2xl border border-white/20 bg-white/50 shadow-sm">
-                                            <div className="flex items-center gap-2 text-stone-500 mb-1">
+                                        <div className="space-y-1 p-3 rounded-2xl shadow-sm bg-[#fbd965]">
+                                            <div className="flex items-center gap-2 text-stone-800 mb-1">
                                                 <Calendar className="h-3.5 w-3.5" />
                                                 <span className="text-xs font-medium">Joined</span>
                                             </div>
                                             <p className="text-sm font-medium text-stone-900">{new Date(user.joinedAt).toLocaleDateString()}</p>
                                         </div>
-                                        <div className="space-y-1 p-3 rounded-2xl border border-white/20 bg-white/50 shadow-sm">
-                                            <div className="flex items-center gap-2 text-stone-500 mb-1">
+                                        <div className="space-y-1 p-3 rounded-2xl shadow-sm bg-[#fbd965]">
+                                            <div className="flex items-center gap-2 text-stone-800 mb-1">
                                                 <Clock className="h-3.5 w-3.5" />
                                                 <span className="text-xs font-medium">Last Seen</span>
                                             </div>

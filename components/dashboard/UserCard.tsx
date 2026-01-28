@@ -36,9 +36,9 @@ export function UserCard({ user, onClick }: UserCardProps) {
                     onClick(user);
                 }
             }}
-            className="group relative flex flex-col items-center bg-gradient-to-br from-[#f8edc0] via-[#f1ecd8] to-[#e4e5e7] p-6 rounded-3xl shadow-sm border border-stone-200 cursor-pointer hover:shadow-xl hover:scale-[1.02] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-stone-900 transition-all duration-300"
+            className="group relative flex flex-col items-center bg-white p-6 rounded-3xl shadow-sm border border-stone-200 cursor-pointer hover:shadow-xl hover:scale-[1.02] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-stone-900 transition-all duration-300"
         >
-            <div className="relative flex h-20 w-20 items-center justify-center rounded-full bg-white/40 text-stone-900 overflow-hidden text-xl font-bold mb-3 ring-4 ring-white/50 shadow-lg group-hover:scale-110 transition-transform duration-300">
+            <div className="relative flex h-20 w-20 items-center justify-center rounded-full bg-stone-100 text-stone-900 overflow-hidden text-xl font-bold mb-3 ring-4 ring-stone-50 shadow-lg group-hover:scale-110 transition-transform duration-300">
                 {user.avatar ? (
                     <img src={user.avatar} alt={user.name} className="h-full w-full object-cover" />
                 ) : (
