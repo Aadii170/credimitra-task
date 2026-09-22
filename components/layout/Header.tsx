@@ -48,6 +48,7 @@ export function Header() {
                     )}
                 </button>
             </div>
-        </header>
+          <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" className="hover:text-red-500 transition-colors">YouTube</a>
+</header>
     );
 }
