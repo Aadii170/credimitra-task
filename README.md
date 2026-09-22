@@ -1,5 +1,7 @@
 # CreditMitra Users Dashboard
 
+![Status](https://img.shields.io/badge/status-active-brightgreen)
+
 **Live Demo:** [https://user-dashboard-tan-alpha.vercel.app/](https://user-dashboard-tan-alpha.vercel.app/)
 
 ## 🏃‍♂️ How to Run Locally
@@ -35,3 +37,8 @@
 -   **Virtualization:** For lists with thousands of users, I would implement `react-window` to render only visible rows, significantly improving performance.
 -   **Server-Side Pagination:** Currently, pagination is client-side. Moving this to the "backend" (or an API route) would be better for massive datasets.
 -   **Unit Tests:** Adding Jest/React Testing Library tests for critical components (like `UserList` and utility hooks) to ensure stability.
+
+## Updated by OpenHands Automation
+
+This repository was updated by OpenHands Automation on 2026-09-22.
+
