@@ -50,6 +50,7 @@ export function Header() {
             </div>
           <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" className="hover:text-red-500 transition-colors">YouTube</a>
   <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="hover:text-emerald-400 transition-colors">Add A Contact Us Button In Nav</a>
+  <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="hover:text-emerald-400 transition-colors">Add Instagaram Link With Logo</a>
 </header>
     );
 }
