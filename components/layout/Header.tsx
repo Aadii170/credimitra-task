@@ -26,13 +26,22 @@ export function Header() {
 
                 <button
                     onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
-                    className="group relative inline-flex h-9 w-9 items-center justify-center rounded-md border border-stone-800 bg-stone-900 text-stone-400 hover:bg-stone-800 hover:text-white focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-stone-400 transition-colors"
+                    className="group inline-flex h-9 items-center justify-center rounded-md border border-stone-800 bg-stone-900 px-3 text-sm font-medium text-stone-400 hover:bg-stone-800 hover:text-white focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-stone-400 transition-colors"
                     aria-label="Toggle theme"
                 >
                     {mounted ? (
                         <>
-                            <Sun className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
-                            <Moon className="absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
+                            {theme === 'dark' ? (
+                                <>
+                                    <Sun className="mr-2 h-4 w-4" />
+                                    Light
+                                </>
+                            ) : (
+                                <>
+                                    <Moon className="mr-2 h-4 w-4" />
+                                    Dark
+                                </>
+                            )}
                         </>
                     ) : (
                         <div className="h-4 w-4 rounded-full bg-stone-800" />
