@@ -34,12 +34,12 @@ export function Header() {
                             {theme === 'dark' ? (
                                 <>
                                     <Sun className="mr-2 h-4 w-4" />
-                                    Light
+                                    Day
                                 </>
                             ) : (
                                 <>
                                     <Moon className="mr-2 h-4 w-4" />
-                                    Dark
+                                    Night
                                 </>
                             )}
                         </>
