@@ -103,17 +103,17 @@ export function UserList({
     return (
         <div className="space-y-4">
             {viewType === 'table' ? (
-                <div className="bg-[#fdfdf5] rounded-3xl shadow-md border border-stone-200 overflow-hidden transition-all hover:shadow-lg">
+                <div className="bg-card rounded-3xl shadow-md border border-border overflow-hidden transition-all hover:shadow-lg">
                     <div className="overflow-x-auto">
                         <table className="w-full text-left text-sm">
-                            <thead className="bg-stone-50/50 text-stone-500 border-b border-stone-100">
+                            <thead className="bg-muted/60 text-muted-foreground border-b border-border">
                                 <tr>
                                     <th className="px-6 py-4 font-medium">User</th>
                                     <th className="hidden px-6 py-4 font-medium sm:table-cell">Email</th>
                                     <th className="px-6 py-4 font-medium">Status</th>
                                 </tr>
                             </thead>
-                            <tbody className="divide-y divide-stone-100">
+                            <tbody className="divide-y divide-border">
                                 <AnimatePresence mode="popLayout">
                                     {users.map((user) => (
                                         <UserTableRow

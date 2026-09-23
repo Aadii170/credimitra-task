@@ -32,13 +32,13 @@ export function Controls({
     setViewType
 }: ControlsProps) {
     return (
-        <div className="bg-white rounded-3xl shadow-md border border-stone-200 p-5 transition-all hover:shadow-lg">
+        <div className="bg-card rounded-3xl shadow-md border border-border p-5 transition-all hover:shadow-lg">
             <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
                 <div className="relative flex-1 sm:max-w-xs group">
-                    <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-stone-400 group-focus-within:text-primary transition-colors" />
+                    <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground group-focus-within:text-primary transition-colors" />
                     <Input
                         placeholder="Search by name or email..."
-                        className="pl-10 bg-white rounded-full border-transparent shadow-sm hover:shadow-md focus:bg-white focus:ring-1 focus:ring-primary/20 transition-all h-11 text-stone-900 placeholder:text-stone-400"
+                        className="pl-10 bg-background rounded-full border-transparent shadow-sm hover:shadow-md focus:bg-background focus:ring-1 focus:ring-ring/20 transition-all h-11 text-foreground placeholder:text-muted-foreground"
                         value={searchQuery}
                         onChange={(e) => setSearchQuery(e.target.value)}
                     />
@@ -46,7 +46,7 @@ export function Controls({
 
                 <div className="flex items-center gap-3 flex-wrap">
                     {/* View Toggle */}
-                    <div className="flex items-center bg-white rounded-full p-1 shadow-sm border border-border/50">
+                    <div className="flex items-center bg-background rounded-full p-1 shadow-sm border border-border/50">
                         <Button
                             variant="ghost"
                             size="sm"
@@ -54,8 +54,8 @@ export function Controls({
                             className={cn(
                                 'h-9 w-9 p-0 rounded-full transition-all',
                                 viewType === 'table'
-                                    ? 'bg-amber-100 text-amber-900 shadow-sm ring-1 ring-amber-200'
-                                    : 'text-stone-400 hover:bg-stone-50 hover:text-stone-900'
+                                    ? 'bg-brand/20 text-foreground shadow-sm ring-1 ring-brand/30'
+                                    : 'text-muted-foreground hover:bg-muted hover:text-foreground'
                             )}
                         >
                             <List className="h-4 w-4" />
@@ -67,8 +67,8 @@ export function Controls({
                             className={cn(
                                 'h-9 w-9 p-0 rounded-full transition-all',
                                 viewType === 'card'
-                                    ? 'bg-amber-100 text-amber-900 shadow-sm ring-1 ring-amber-200'
-                                    : 'text-stone-400 hover:bg-stone-50 hover:text-stone-900'
+                                    ? 'bg-brand/20 text-foreground shadow-sm ring-1 ring-brand/30'
+                                    : 'text-muted-foreground hover:bg-muted hover:text-foreground'
                             )}
                         >
                             <LayoutGrid className="h-4 w-4" />
@@ -76,7 +76,7 @@ export function Controls({
                     </div>
 
                     {/* Status Filter */}
-                    <div className="flex items-center bg-white rounded-full p-1 shadow-sm border border-border/50">
+                    <div className="flex items-center bg-background rounded-full p-1 shadow-sm border border-border/50">
                         {(['All', 'Active', 'Inactive'] as const).map((status) => (
                             <Button
                                 key={status}
@@ -86,8 +86,8 @@ export function Controls({
                                 className={cn(
                                     'h-9 px-4 text-xs font-medium rounded-full transition-all',
                                     statusFilter === status
-                                        ? 'bg-amber-100 text-amber-900 shadow-sm ring-1 ring-amber-200'
-                                        : 'text-stone-500 hover:bg-stone-50 hover:text-stone-900'
+                                        ? 'bg-brand/20 text-foreground shadow-sm ring-1 ring-brand/30'
+                                        : 'text-muted-foreground hover:bg-muted hover:text-foreground'
                                 )}
                             >
                                 {status}
@@ -98,7 +98,7 @@ export function Controls({
                     {/* Sort Select */}
                     <div className="relative group">
                         <select
-                            className="h-11 w-[140px] appearance-none rounded-full border-transparent bg-white pl-4 pr-9 py-2 text-xs font-medium shadow-sm hover:shadow-md transition-all focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-stone-300 cursor-pointer text-stone-900"
+                            className="h-11 w-[140px] appearance-none rounded-full border-transparent bg-background pl-4 pr-9 py-2 text-xs font-medium shadow-sm hover:shadow-md transition-all focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring/30 cursor-pointer text-foreground"
                             value={sortBy}
                             onChange={(e) => setSortBy(e.target.value as 'name_asc' | 'name_desc')}
                         >
@@ -111,7 +111,7 @@ export function Controls({
                     {/* Items Per Page */}
                     <div className="relative">
                         <select
-                            className="h-11 appearance-none rounded-full border-transparent bg-white pl-4 pr-9 py-2 text-xs font-medium shadow-sm hover:shadow-md transition-all focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-stone-300 cursor-pointer text-stone-900"
+                            className="h-11 appearance-none rounded-full border-transparent bg-background pl-4 pr-9 py-2 text-xs font-medium shadow-sm hover:shadow-md transition-all focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring/30 cursor-pointer text-foreground"
                             value={itemsPerPage}
                             onChange={(e) => setItemsPerPage(Number(e.target.value))}
                         >

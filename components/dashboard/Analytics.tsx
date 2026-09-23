@@ -31,8 +31,8 @@ export function Analytics({ users }: AnalyticsProps) {
             </div>
 
             {/* Active Users Pill - Highlighted */}
-            <div className="flex items-center gap-3 rounded-full bg-[#fbd965] px-6 py-3 shadow-sm text-stone-900">
-                <div className="flex h-10 w-10 items-center justify-center rounded-full bg-white/40 text-stone-900">
+            <div className="flex items-center gap-3 rounded-full bg-brand px-6 py-3 shadow-sm text-brand-foreground">
+                <div className="flex h-10 w-10 items-center justify-center rounded-full bg-brand-foreground/10 text-brand-foreground">
                     <UserCheck className="h-5 w-5" />
                 </div>
                 <div className="flex flex-col">
@@ -62,7 +62,7 @@ export function Analytics({ users }: AnalyticsProps) {
             <div className="flex-1 min-w-[200px] h-12 rounded-full bg-card border border-border/50 p-1 flex items-center shadow-sm">
                 <div className="h-full w-full rounded-full bg-secondary overflow-hidden relative flex">
                     <motion.div
-                        className="h-full bg-[#fbd965]"
+                        className="h-full bg-brand"
                         initial={{ width: 0 }}
                         animate={{ width: `${activePercent}%` }}
                         transition={{ duration: 1, ease: "easeOut" }}

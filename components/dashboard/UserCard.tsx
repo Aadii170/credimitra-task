@@ -36,9 +36,9 @@ export function UserCard({ user, onClick }: UserCardProps) {
                     onClick(user);
                 }
             }}
-            className="group relative flex flex-col items-center bg-white p-6 rounded-3xl shadow-sm border border-stone-200 cursor-pointer hover:shadow-xl hover:scale-[1.02] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-stone-900 transition-all duration-300"
+            className="group relative flex flex-col items-center bg-card p-6 rounded-3xl shadow-sm border border-border cursor-pointer hover:shadow-xl hover:scale-[1.02] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring transition-all duration-300"
         >
-            <div className="relative flex h-20 w-20 items-center justify-center rounded-full bg-stone-100 text-stone-900 overflow-hidden text-xl font-bold mb-3 ring-4 ring-stone-50 shadow-lg group-hover:scale-110 transition-transform duration-300">
+            <div className="relative flex h-20 w-20 items-center justify-center rounded-full bg-secondary text-secondary-foreground overflow-hidden text-xl font-bold mb-3 ring-4 ring-background shadow-lg group-hover:scale-110 transition-transform duration-300">
                 {user.avatar ? (
                     <img src={user.avatar} alt={user.name} className="h-full w-full object-cover" />
                 ) : (
@@ -46,9 +46,9 @@ export function UserCard({ user, onClick }: UserCardProps) {
                 )}
             </div>
 
-            <h3 className="text-lg font-bold text-center text-stone-900 line-clamp-1">{user.name}</h3>
+            <h3 className="text-lg font-bold text-center text-foreground line-clamp-1">{user.name}</h3>
 
-            <div className="flex items-center gap-1.5 text-stone-600 mt-1 mb-3">
+            <div className="flex items-center gap-1.5 text-muted-foreground mt-1 mb-3">
                 <Mail className="h-3 w-3" />
                 <span className="text-xs truncate max-w-[150px]">{user.email}</span>
             </div>
@@ -56,8 +56,8 @@ export function UserCard({ user, onClick }: UserCardProps) {
             <div className={cn(
                 "inline-flex items-center rounded-full px-3 py-1 text-[10px] font-semibold ring-1 ring-inset",
                 user.status === 'Active'
-                    ? "bg-[#fbd965] text-stone-900 ring-stone-900/10"
-                    : "bg-stone-200 text-stone-600 ring-stone-400/20"
+                    ? "bg-brand/20 text-foreground ring-brand/25"
+                    : "bg-secondary text-muted-foreground ring-border"
             )}>
                 {user.status}
             </div>
