@@ -33,7 +33,7 @@ export default function DashboardPage() {
   const [viewType, setViewType] = React.useState<'table' | 'card'>('table');
 
   return (
-    <div className="container py-10 px-4 md:px-8 max-w-screen-2xl mx-auto space-y-8">
+    <div id="overview" className="container py-10 px-4 md:px-8 max-w-screen-2xl mx-auto space-y-8">
       <div className="flex flex-col gap-2 pl-6">
         <h1 className="text-3xl font-bold tracking-tight">Users Dashboard</h1>
         <p className="text-muted-foreground">
@@ -41,9 +41,14 @@ export default function DashboardPage() {
         </p>
       </div>
 
-      <Analytics users={users} />
+      <section id="insights">
+        <Analytics users={users} />
+      </section>
 
-      <div className="bg-gradient-to-br from-[#f8edc0] via-[#f1ecd8] to-[#e4e5e7] rounded-3xl shadow-md border border-stone-200 overflow-hidden transition-all hover:shadow-lg">
+      <section
+        id="workspace"
+        className="bg-gradient-to-br from-[#f8edc0] via-[#f1ecd8] to-[#e4e5e7] rounded-3xl shadow-md border border-stone-200 overflow-hidden transition-all hover:shadow-lg"
+      >
         <div className="p-6">
           <Controls
             searchQuery={searchQuery}
@@ -72,9 +77,11 @@ export default function DashboardPage() {
             viewType={viewType}
           />
         </div>
-      </div>
+      </section>
 
-      <UserStatusChart users={users} />
+      <section id="status-breakdown">
+        <UserStatusChart users={users} />
+      </section>
 
       <UserDetails
         user={selectedUser}
