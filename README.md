@@ -38,7 +38,7 @@
 -   **Server-Side Pagination:** Currently, pagination is client-side. Moving this to the "backend" (or an API route) would be better for massive datasets.
 -   **Unit Tests:** Adding Jest/React Testing Library tests for critical components (like `UserList` and utility hooks) to ensure stability.
 
-## Updated by OpenHands Automation
+## Updated by OpenHands AI Agent
 
-This repository was updated by OpenHands Automation on 2026-09-22.
+This repository was updated by OpenHands AI Agent on 2026-09-23.
 
