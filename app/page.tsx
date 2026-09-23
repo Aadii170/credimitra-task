@@ -43,7 +43,7 @@ export default function DashboardPage() {
 
       <Analytics users={users} />
 
-      <div className="bg-gradient-to-br from-[#f8edc0] via-[#f1ecd8] to-[#e4e5e7] rounded-3xl shadow-md border border-stone-200 overflow-hidden transition-all hover:shadow-lg">
+      <div className="bg-gradient-to-br from-surface-highlight-start via-surface-highlight-middle to-surface-highlight-end rounded-3xl shadow-md border border-border overflow-hidden transition-all hover:shadow-lg">
         <div className="p-6">
           <Controls
             searchQuery={searchQuery}

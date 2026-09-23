@@ -20,7 +20,7 @@
   --muted-foreground: #78716C;
 
   --accent: #FFFBEB;
-  --accent-foreground: #F59E0B;
+  --accent-foreground: #92400E;
 
   --destructive: #EF4444;
   --destructive-foreground: #FEF2F2;
@@ -29,37 +29,54 @@
   --input: #E7E5E4;
   --ring: #F59E0B;
 
+  --brand: #FBD965;
+  --brand-foreground: #1C1917;
+  --surface-highlight-start: #F8EDC0;
+  --surface-highlight-middle: #F1ECD8;
+  --surface-highlight-end: #E4E5E7;
+  --table-hover: #FFF2B3;
+
   --radius: 1rem;
+  color-scheme: light;
 }
 
 .dark {
   --background: #020617;
   --foreground: #f8fafc;
 
-  --card: #020617;
+  --card: #111827;
   --card-foreground: #f8fafc;
 
-  --popover: #020617;
+  --popover: #111827;
   --popover-foreground: #f8fafc;
 
-  --primary: #f8fafc;
-  --primary-foreground: #0f172a;
+  --primary: #FBD965;
+  --primary-foreground: #1C1917;
 
-  --secondary: #1e293b;
+  --secondary: #1f2937;
   --secondary-foreground: #f8fafc;
 
-  --muted: #1e293b;
+  --muted: #172033;
   --muted-foreground: #94a3b8;
 
-  --accent: #1e293b;
-  --accent-foreground: #f8fafc;
+  --accent: #2A200B;
+  --accent-foreground: #FDE68A;
 
   --destructive: #7f1d1d;
   --destructive-foreground: #f8fafc;
 
-  --border: #1e293b;
-  --input: #1e293b;
-  --ring: #cbd5e1;
+  --border: #273449;
+  --input: #273449;
+  --ring: #FBD965;
+
+  --brand: #FBD965;
+  --brand-foreground: #1C1917;
+  --surface-highlight-start: #33270F;
+  --surface-highlight-middle: #1F2937;
+  --surface-highlight-end: #111827;
+  --table-hover: #3A2D11;
+
+  color-scheme: dark;
 }
 
 @theme inline {
@@ -82,9 +99,16 @@
   --color-border: var(--border);
   --color-input: var(--input);
   --color-ring: var(--ring);
+  --color-brand: var(--brand);
+  --color-brand-foreground: var(--brand-foreground);
+  --color-surface-highlight-start: var(--surface-highlight-start);
+  --color-surface-highlight-middle: var(--surface-highlight-middle);
+  --color-surface-highlight-end: var(--surface-highlight-end);
+  --color-table-hover: var(--table-hover);
 }
 
 body {
   background-color: var(--background);
   color: var(--foreground);
+  transition: background-color 150ms ease, color 150ms ease;
 }

@@ -15,10 +15,10 @@ export function UserStatusChart({ users }: UserStatusChartProps) {
     const isEmpty = users.length === 0;
 
     const data = isEmpty
-        ? [{ name: 'Empty', value: 1, color: '#f5f5f4' }]
+        ? [{ name: 'Empty', value: 1, color: 'var(--secondary)' }]
         : [
-            { name: 'Active', value: activeCount, color: '#fbd965' },   // Active Yellow
-            { name: 'Inactive', value: inactiveCount, color: '#e5e7eb' }, // Inactive Gray
+            { name: 'Active', value: activeCount, color: 'var(--brand)' },
+            { name: 'Inactive', value: inactiveCount, color: 'var(--secondary)' },
         ];
 
     return (
@@ -26,29 +26,29 @@ export function UserStatusChart({ users }: UserStatusChartProps) {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
-            className="flex flex-col md:flex-row items-center justify-between bg-gradient-to-br from-[#f8edc0] via-[#f1ecd8] to-[#e4e5e7] rounded-3xl shadow-lg border border-white/20 p-6 hover:shadow-xl hover:scale-[1.01] transition-all duration-300"
+            className="flex flex-col md:flex-row items-center justify-between bg-gradient-to-br from-surface-highlight-start via-surface-highlight-middle to-surface-highlight-end rounded-3xl shadow-lg border border-border p-6 hover:shadow-xl hover:scale-[1.01] transition-all duration-300"
         >
-            <div className="flex flex-col gap-4 bg-white/40 backdrop-blur-sm p-6 rounded-2xl border border-white/50 shadow-sm w-full md:w-auto">
+            <div className="flex flex-col gap-4 bg-card/80 backdrop-blur-sm p-6 rounded-2xl border border-border/70 shadow-sm w-full md:w-auto">
                 <div>
-                    <h3 className="text-xl font-bold text-stone-900">Analytics</h3>
-                    <p className="text-sm text-stone-600 max-w-xs mt-1">
+                    <h3 className="text-xl font-bold text-foreground">Analytics</h3>
+                    <p className="text-sm text-muted-foreground max-w-xs mt-1">
                         Live status distribution of your team members.
                     </p>
                 </div>
 
                 <div className="flex flex-col gap-3 mt-2">
-                    <div className="flex items-center gap-3 p-2 rounded-xl bg-white/50 border border-white/40">
-                        <div className="w-3 h-3 rounded-full bg-[#fbd965] shadow-sm" />
-                        <span className="text-sm font-semibold text-stone-700">Active ({activeCount})</span>
+                    <div className="flex items-center gap-3 p-2 rounded-xl bg-background/60 border border-border/60">
+                        <div className="w-3 h-3 rounded-full bg-brand shadow-sm" />
+                        <span className="text-sm font-semibold text-foreground">Active ({activeCount})</span>
                     </div>
-                    <div className="flex items-center gap-3 p-2 rounded-xl bg-white/50 border border-white/40">
-                        <div className="w-3 h-3 rounded-full bg-stone-200 shadow-sm" />
-                        <span className="text-sm font-semibold text-stone-700">Inactive ({inactiveCount})</span>
+                    <div className="flex items-center gap-3 p-2 rounded-xl bg-background/60 border border-border/60">
+                        <div className="w-3 h-3 rounded-full bg-secondary shadow-sm" />
+                        <span className="text-sm font-semibold text-foreground">Inactive ({inactiveCount})</span>
                     </div>
                 </div>
             </div>
 
-            <div className="relative h-[250px] w-full md:w-[350px] flex items-center justify-center mt-6 md:mt-0 bg-white/40 backdrop-blur-sm rounded-2xl border border-white/50 shadow-sm p-4">
+            <div className="relative h-[250px] w-full md:w-[350px] flex items-center justify-center mt-6 md:mt-0 bg-card/80 backdrop-blur-sm rounded-2xl border border-border/70 shadow-sm p-4">
                 <ResponsiveContainer width="100%" height="100%">
                     <PieChart>
                         <Pie
@@ -67,7 +67,6 @@ export function UserStatusChart({ users }: UserStatusChartProps) {
                                 if (!percent || percent <= 0) return null;
 
                                 const RADIAN = Math.PI / 180;
-                                // Default to 0 if midAngle is undefined, though it should be present for visible slices
                                 const angle = midAngle ?? 0;
                                 const radius = innerRadius + (outerRadius - innerRadius) * 0.5;
                                 const x = cx + radius * Math.cos(-angle * RADIAN);
@@ -76,7 +75,7 @@ export function UserStatusChart({ users }: UserStatusChartProps) {
                                     <text
                                         x={x}
                                         y={y}
-                                        fill="#1c1917"
+                                        fill="var(--foreground)"
                                         textAnchor="middle"
                                         dominantBaseline="central"
                                         className="text-[10px] font-bold"
@@ -94,21 +93,20 @@ export function UserStatusChart({ users }: UserStatusChartProps) {
                         {!isEmpty && (
                             <Tooltip
                                 contentStyle={{
-                                    backgroundColor: 'white',
+                                    backgroundColor: 'var(--card)',
                                     borderRadius: '12px',
-                                    border: '1px solid #e5e7eb',
+                                    border: '1px solid var(--border)',
                                     boxShadow: '0 4px 6px -1px rgb(0 0 0 / 0.1)'
                                 }}
-                                itemStyle={{ color: '#1c1917', fontWeight: 600 }}
+                                itemStyle={{ color: 'var(--foreground)', fontWeight: 600 }}
                             />
                         )}
                     </PieChart>
                 </ResponsiveContainer>
 
-                {/* Center Text Overlay */}
                 <div className="absolute left-1/2 top-[65%] -translate-x-1/2 flex flex-col items-center text-center">
-                    <span className="text-3xl font-bold text-stone-900">{users.length}</span>
-                    <span className="text-xs font-medium text-stone-500 uppercase tracking-wide">Total Users</span>
+                    <span className="text-3xl font-bold text-foreground">{users.length}</span>
+                    <span className="text-xs font-medium text-muted-foreground uppercase tracking-wide">Total Users</span>
                 </div>
             </div>
         </motion.div>

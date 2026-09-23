@@ -104,9 +104,9 @@ export function UserDetails({ user, onClose }: UserDetailsProps) {
                         className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-50 w-full max-w-md focus:outline-none max-h-[90vh] overflow-y-auto space-y-4 no-scrollbar p-4"
                     >
                         {isLoading ? (
-                            <div className="flex h-64 flex-col items-center justify-center gap-4 rounded-3xl bg-white/50 backdrop-blur-md border border-white/20 shadow-xl">
-                                <Loader2 className="h-8 w-8 animate-spin text-stone-900" />
-                                <p className="text-sm font-medium text-stone-600">Loading details...</p>
+                            <div className="flex h-64 flex-col items-center justify-center gap-4 rounded-3xl bg-card/90 backdrop-blur-md border border-border shadow-xl">
+                                <Loader2 className="h-8 w-8 animate-spin text-primary" />
+                                <p className="text-sm font-medium text-muted-foreground">Loading details...</p>
                             </div>
                         ) : (
                             <div className="flex flex-col gap-2">
@@ -116,18 +116,18 @@ export function UserDetails({ user, onClose }: UserDetailsProps) {
                                     animate={{ opacity: 1, scale: 1 }}
                                     exit={{ opacity: 0, scale: 0.95 }}
                                     transition={{ duration: 0.3 }}
-                                    className="relative flex flex-col items-center bg-white p-6 rounded-3xl shadow-xl border border-stone-200"
+                                    className="relative flex flex-col items-center bg-card p-6 rounded-3xl shadow-xl border border-border"
                                 >
                                     <Button
                                         variant="ghost"
                                         size="icon"
                                         onClick={onClose}
-                                        className="absolute right-4 top-4 hover:bg-stone-100 text-stone-500"
+                                        className="absolute right-4 top-4 hover:bg-muted text-muted-foreground"
                                     >
                                         <X className="h-4 w-4" />
                                     </Button>
 
-                                    <div className="relative flex h-24 w-24 items-center justify-center rounded-full bg-stone-100 text-stone-900 overflow-hidden text-2xl font-bold mb-4 ring-4 ring-stone-50 shadow-lg mt-2">
+                                    <div className="relative flex h-24 w-24 items-center justify-center rounded-full bg-secondary text-secondary-foreground overflow-hidden text-2xl font-bold mb-4 ring-4 ring-background shadow-lg mt-2">
                                         {user.avatar ? (
                                             <img src={user.avatar} alt={user.name} className="h-full w-full object-cover" />
                                         ) : (
@@ -135,14 +135,14 @@ export function UserDetails({ user, onClose }: UserDetailsProps) {
                                         )}
                                     </div>
 
-                                    <h3 className="text-xl font-bold text-center text-stone-900">{user.name}</h3>
+                                    <h3 className="text-xl font-bold text-center text-foreground">{user.name}</h3>
 
-                                    <div className="flex items-center gap-2 text-stone-600 mt-1 mb-4">
+                                    <div className="flex items-center gap-2 text-muted-foreground mt-1 mb-4">
                                         <Mail className="h-3.5 w-3.5" />
                                         <span className="text-sm">{user.email}</span>
                                     </div>
 
-                                    <div className={`inline-flex items-center rounded-full px-4 py-1.5 text-xs font-semibold ring-1 ring-inset ${user.status === 'Active' ? 'bg-[#fbd965] text-stone-900 ring-stone-900/10' : 'bg-stone-200 text-stone-600 ring-stone-400/20'}`}>
+                                    <div className={`inline-flex items-center rounded-full px-4 py-1.5 text-xs font-semibold ring-1 ring-inset ${user.status === 'Active' ? 'bg-brand/20 text-foreground ring-brand/25' : 'bg-secondary text-muted-foreground ring-border'}`}>
                                         {user.status}
                                     </div>
                                 </motion.div>
@@ -153,29 +153,29 @@ export function UserDetails({ user, onClose }: UserDetailsProps) {
                                     animate={{ opacity: 1, scale: 1 }}
                                     exit={{ opacity: 0, scale: 0.95 }}
                                     transition={{ duration: 0.3, delay: 0.1 }}
-                                    className="flex flex-col gap-6 bg-white p-6 rounded-3xl shadow-xl border border-stone-200"
+                                    className="flex flex-col gap-6 bg-card p-6 rounded-3xl shadow-xl border border-border"
                                 >
                                     <div className="space-y-2">
-                                        <h4 className="text-sm font-medium text-stone-500 uppercase tracking-wider pl-1">About</h4>
-                                        <p className="text-sm leading-relaxed text-stone-900 bg-[#fbd965] p-4 rounded-2xl shadow-sm">
+                                        <h4 className="text-sm font-medium text-muted-foreground uppercase tracking-wider pl-1">About</h4>
+                                        <p className="text-sm leading-relaxed text-accent-foreground bg-accent p-4 rounded-2xl shadow-sm">
                                             {user.bio || "No bio available."}
                                         </p>
                                     </div>
 
                                     <div className="grid grid-cols-2 gap-4">
-                                        <div className="space-y-1 p-3 rounded-2xl shadow-sm bg-[#fbd965]">
-                                            <div className="flex items-center gap-2 text-stone-800 mb-1">
+                                        <div className="space-y-1 p-3 rounded-2xl shadow-sm bg-secondary">
+                                            <div className="flex items-center gap-2 text-muted-foreground mb-1">
                                                 <Calendar className="h-3.5 w-3.5" />
                                                 <span className="text-xs font-medium">Joined</span>
                                             </div>
-                                            <p className="text-sm font-medium text-stone-900">{new Date(user.joinedAt).toLocaleDateString()}</p>
+                                            <p className="text-sm font-medium text-foreground">{new Date(user.joinedAt).toLocaleDateString()}</p>
                                         </div>
-                                        <div className="space-y-1 p-3 rounded-2xl shadow-sm bg-[#fbd965]">
-                                            <div className="flex items-center gap-2 text-stone-800 mb-1">
+                                        <div className="space-y-1 p-3 rounded-2xl shadow-sm bg-secondary">
+                                            <div className="flex items-center gap-2 text-muted-foreground mb-1">
                                                 <Clock className="h-3.5 w-3.5" />
                                                 <span className="text-xs font-medium">Last Seen</span>
                                             </div>
-                                            <p className="text-sm font-medium text-stone-900">{new Date(user.lastSeen).toLocaleString()}</p>
+                                            <p className="text-sm font-medium text-foreground">{new Date(user.lastSeen).toLocaleString()}</p>
                                         </div>
                                     </div>
                                 </motion.div>
